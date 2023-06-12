@@ -45,3 +45,43 @@ console.log(first_variable); // output 100
 
 let your_name = "Shehroze";
 console.log(`Hello my name is ${your_name}`);
+
+/////////////////////////////////BOOLEANS////////////////////////////////////////////////
+const a = 4;
+const b = 53;
+const c = 57;
+const d = 16;
+const e = "Kevin";
+
+console.log(a < b);
+console.log(c > d);
+console.log("Kevin" === "Kevin");
+console.log(true || false);
+console.log(false || false || false || false || false || true);
+console.log(false === false);
+console.log(e === "Kevin");
+console.log(a + b === c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)
+console.log(a * a === d); // note: the answer is a simple arithmetic equation, not something "weird"
+console.log(48 == "48");
+
+/////////////////////////////////THE FARM////////////////////////////////////////////////
+
+//1. Declare a variable animal. Set it to be either "cow" or something else.
+
+let animal = "cow";
+//2. Write code that will print out "mooooo" if the it is equal to cow
+
+if (animal === "cow") {
+  console.log(`mooooo`);
+} else {
+  console.log(`Hey! You are not a cow.`);
+}
+
+//3.Change your code so that if the variable animalis anything other than a cow,
+// it will print "Hey! You're not a cow."Commit
+animal = "cat";
+if (animal === "cow") {
+  console.log(`mooooo`);
+} else {
+  console.log(`Hey! You are not a cow.`);
+}
