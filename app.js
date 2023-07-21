@@ -556,6 +556,34 @@ user.purchased.forEach((e) => console.log(e));
 // and prints each element to the console.
 user.friend.purchased.forEach((e) => console.log(e));
 
-
 //G. Functions can operate on objects
 
+// Write a single function updateUser that takes no parameters.
+// When the function is run, it should:
+// it should increment the user's age by 1
+// make the user's name uppercase
+// The function does not need a returnstatement, it will merely modify
+//  the user object.
+
+function updateUser() {
+  user.age++;
+  let name = user.name;
+  user.name = name.toLocaleUpperCase();
+}
+updateUser();
+console.log(user);
+
+// Write a function oldAndLoud that performs the exact same tasks as
+//  updateUser, but instead of hard-coding it to only work on our
+//  userobject, make it take a parameter person, and have it modify
+//  the object that is passed in as an argument when the function is
+//  called. Call your oldAndLoudfunction with useras the argument.
+
+function oldAndLoud(person) {
+  person.age++;
+  let name = person.name;
+  person.name = name.toLocaleUpperCase();
+}
+oldAndLoud(user);
+
+console.log(user);
