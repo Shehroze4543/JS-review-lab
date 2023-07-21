@@ -255,3 +255,307 @@ console.log(myArray);
 
 myArray.reverse();
 myArray.forEach((element) => console.log(element));
+
+///////////////////////////////////F. Biggie Smalls
+//Create a variable that contains an integer.
+let my_integer = 30;
+//Write an if ... elsestatement that:
+//1.console.log()s "little number" if the number is entered is less than 100
+//2.console.log()s big numberif the number is greater than or equal to 100.
+if (my_integer < 100) {
+  console.log(`LITTLE NUMBER`);
+} else if (my_integer >= 100) {
+  console.log(`BIG NUMBER`);
+}
+
+///////////////////////////////////G. Monkey in the Middle
+//Write an if ... elsestatement that:
+//console.log()little numberif the number entered is less than 5.
+//If the number entered is more than 10, log big number.
+// Otherwise, log "monkey".
+if (my_integer < 5) {
+  console.log(`LITTLE NUMBER`);
+} else if (my_integer > 10) {
+  console.log(`BIG NUMBER`);
+} else {
+  console.log(`monkey`);
+}
+
+///////////////////////////////H. What's in Your Closet?
+//Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript.
+const kristynsCloset = [
+  "left shoe",
+  "cowboy boots",
+  "right sock",
+  "Per Scholas hoodie",
+  "green pants",
+  "yellow knit hat",
+  "marshmallow peeps",
+];
+
+// Thom's closet is more complicated. Check out this nested data structure!!
+const thomsCloset = [
+  [
+    // These are Thom's shirts
+    "grey button-up",
+    "dark grey button-up",
+    "light blue button-up",
+    "blue button-up",
+  ],
+  [
+    // These are Thom's pants
+    "grey jeans",
+    "jeans",
+    "PJs",
+  ],
+  [
+    // Thom's accessories
+    "wool mittens",
+    "wool scarf",
+    "raybans",
+  ],
+];
+
+//1. What's Kristyn wearing today? Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + the third item in Kristyn's closet + " today!" to the console.
+console.log(`Kristyn is rocking that ${kristynsCloset[3]} today!`);
+
+//2. Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
+kristynsCloset.splice(6, 0, "raybans");
+console.log(kristynsCloset);
+//3. Kristyn spilled coffee on her hat... modify this item to read "stained knit hat"instead of yellow.
+kristynsCloset[5] = "stained knit hat";
+console.log(kristynsCloset);
+
+//4. Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirtsarray.
+console.log(thomsCloset[0][0]);
+
+//5. In the same way, access one item from Thom's pants array.
+console.log(thomsCloset[1][0]);
+//6. Access one item from Thom's accessories array.
+console.log(thomsCloset[2][2]);
+//7. Log a sentence about what Thom's wearing. Example: "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
+console.log(
+  `Thom is looking fierce in ${thomsCloset[0][0]}, ${thomsCloset[1][0]} and ${thomsCloset[2][2]}`
+);
+
+//8. Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
+thomsCloset[1][2] = "Footie Pajamas";
+console.log(thomsCloset[1]);
+
+/////////////////////////////////////////IV. Functions
+//A. printGreeting
+//B. printCool
+
+//Write a function printCoolthat accepts one parameter, name as an argument.
+//The function should print the name and a message saying that that person is cool.
+
+function is_cool(name) {
+  console.log(`${name} is cool`);
+}
+
+is_cool("Captain Reynolds");
+
+//C. calculateCube
+//Write a function calculateCube that takes a single number and prints the volume of a
+// cube made from that number.
+
+function calculateCube(num) {
+  console.log(num * num * num);
+}
+calculateCube(5);
+
+//. D. isVowel
+//Write a function isVowelthat takes a character (i.e. a string of length 1)
+// and returns true if it is a vowel, false otherwise. The vowel could be upper or
+// lower case. Test your function on every vowel and make sure it's working.
+// In general, when you write functions, take a minute to test them with different
+// values to make sure they behave the way you want.
+
+function is_vowel(char) {
+  let vowel = ["a", "e", "i", "o", "u"];
+  let str = char.toLowerCase();
+  if (typeof str === "string" && vowel.includes(str)) {
+    console.log(`${str} is a vowel`);
+  } else {
+    console.log(`${str} is not a vowel`);
+  }
+}
+
+is_vowel("q");
+
+//E. getTwoLengths
+// Write a function getTwoLengthsthat accepts two parameters (strings).
+// The function should return an array of numbers where each number is
+// the length of the corresponding string.
+
+function getTwoLengths(str1, str2) {
+  let new_arr = [];
+  let new_str1 = str1.length;
+  let new_str2 = str2.length;
+  new_arr.push(new_str1, new_str2);
+  return new_arr;
+}
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+// F. getMultipleLengths
+// Write a function getMultipleLengthsthat accepts a single parameter as
+// an argument: an array of strings. The function should return an array
+// of numbers where each number is the length of the corresponding string.
+
+function getMultipleLengths(arr) {
+  let new_arr = [];
+  for (let i = 0; i < arr.length; i++) {
+    new_arr.push(arr[i].length);
+  }
+  return new_arr;
+}
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+// G. maxOfThree
+// Define a function maxOfThreethat takes three numbers as arguments and
+// returns the largest of them. If all numbers are the same, it doesn't
+//  matter which one is returned. If the two largest numbers are the same,
+//  one of them should be returned. Be sure to test it with larger values
+//  in each of the three locations.
+
+function maxOfThree(num1, num2, num3) {
+  let new_arr = [];
+  new_arr.push(num1, num2, num3);
+  new_arr.sort((a, b) => a - b);
+  return new_arr[new_arr.length - 1];
+}
+console.log(maxOfThree(6, 9, 1));
+
+// H. printLongestWord
+// Write a function printLongestWordthat accepts a single argument,
+// an array of strings. The method should return the longest word in
+// the array. In case of a tie, the method should return the word that
+//  appears first in the array.
+
+function printLongestWord(arr) {
+  let new_arr = [];
+  for (let i = 0; i < arr.length; i++) {
+    new_arr.push(arr[i].length);
+  }
+  let x = Math.max(...new_arr);
+  let y = new_arr.indexOf(x);
+  return arr[y];
+}
+
+console.log(
+  printLongestWord([
+    "BoJack",
+    "Princess",
+    "Diane",
+    "a",
+    "Max",
+    "Peanutbutter",
+    "big",
+    "Todd",
+  ])
+);
+
+////////////////////////////////////////Objects
+// Let's set up an object data structure. Let's say we have a website that
+//  sells products, and we have a user of our website, and we want to
+//  store that user's data. The object data structure is a good way to
+//  organize the data from our user.
+
+// A. Make a user object
+// Create an object called user.
+// Write in to the object the key-value pairs for name, email, age, and
+//  purchased. Set the value of purchasedto an empty array []. Set the
+//  other values to whatever you would like.
+
+const user = {
+  name: "Shehroze",
+  email: "Shehroz4543@gmail.com",
+  age: 31,
+  purchased: [],
+};
+
+// B. Update the user
+// Our user has changed his or her email address. Without changing the
+// original userobject, update the emailvalue to a new email address.
+// Our user has had a birthday! Without changing the original userobject,
+//  increment the agevalue using the postfix operator. Hint: age++
+
+user.email = "shigri2023@gmail.com";
+user.age++;
+
+// C. Adding keys and values
+// You have decided to add your user's location to the data that you want
+//  to collect.
+// Without changing the original userobject, add a new key locationto the
+// object, and give it a value or some-or-other location (a string).
+
+user.location = "Flushing, NY";
+
+// D. Shopaholic!
+// Our user has purchased an item! They have purchased some "carbohydrates".
+//  Using .push(), add the string "carbohydrates" to the purchasedarray.
+// Our user has purchased an item! They have purchased some "peace of mind".
+// Using .push(), add the string "peace of mind" to the purchasedarray.
+// Our user has purchased an item! They have purchased some "Merino jodhpurs".
+//  Using .push(), add the string "Merino jodhpurs" to the purchasedarray.
+// Console.log just the "Merino jodhpurs" from the purchasedarray.
+
+user.purchased.push("carbohydrates");
+user.purchased.push("piece of mind");
+user.purchased.push("Merino Jodhpurs");
+console.log(user.purchased[2]);
+console.log(user);
+
+// E. Object-within-object
+// Remember that you can add an object to an existing object in the same
+// way that you can add any new property/value pair.
+// If we want to give our user a friendwith a nameand age, we could write:
+// user.friend = {
+//   name: "Grace Hopper",
+//   age: 85
+// }
+// When we console.log user, we would see the friendobject added to our
+// user object.
+
+// Write a friendobject into your userobject and give the friend a name,
+//  age, location, and purchased array (empty for now)
+user.friend = {
+  name: "Michael Scott",
+  age: 85,
+  location: "Richmond Hill, NY",
+  purchased: [],
+};
+// Console.log just the friend's name
+console.log(user.friend.name);
+
+// Console.log just the friend's location
+console.log(user.friend.location);
+
+// CHANGE the friend's age to 55
+user.friend.age = 55;
+
+// The friendhas purchased "The One Ring". Use .push()to add "The One Ring"
+//  to the friend's purchasedarray.
+user.friend.purchased.push("The One Ring");
+
+// The friendhas purchased "A latte". Use .push()to add "A latte" to the
+//  friend's purchasedarray.
+user.friend.purchased.push("A latte");
+
+// Console.log just "A latte" from the friend's purchasedarray.
+console.log(user.friend.purchased[1]);
+
+//F. Loops
+// Write a for loop that iterates over the User's purchasedarray
+//  (NOT the friend's purchased array), and prints each element to the
+//  console.
+
+user.purchased.forEach((e) => console.log(e));
+
+//Write a for loop that iterates over the Friend's purchasedarray,
+// and prints each element to the console.
+user.friend.purchased.forEach((e) => console.log(e));
+
+
+//G. Functions can operate on objects
+
